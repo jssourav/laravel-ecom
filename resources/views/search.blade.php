@@ -1,41 +1,10 @@
 @extends('master')
 
 @section('content')
-<div class="custom-product">
-	<div id="demo" class="carousel slide" data-ride="carousel">
-	  <ul class="carousel-indicators">
-	    <li data-target="#demo" data-slide-to="0" class="active"></li>
-	    <li data-target="#demo" data-slide-to="1"></li>
-	    <li data-target="#demo" data-slide-to="2"></li>
-	  </ul>
-	  
-	  <!-- The slideshow -->
-	  <div class="carousel-inner">
-	  	@foreach($products as $item)
-	    <div class="carousel-item {{$item['id']==1?'active':''}}">
-	      <img src="{{$item->gallery}}" alt="Los Angeles" width="1100" height="500">
-	      <div class="carousel-caption d-none d-md-block">
-	      	<a href="detail/{{$item->id}}">
-	      		<h5>{{$item->name}}</h5>
-		    	<p>{{$item->description}}</p>
-	      	</a>
-		  </div>
-	    </div>
-	    @endforeach
-	  </div>
-	  
-	  <!-- Left and right controls -->
-	  <a class="carousel-control-prev" href="#demo" data-slide="prev">
-	    <span class="carousel-control-prev-icon"></span>
-	  </a>
-	  <a class="carousel-control-next" href="#demo" data-slide="next">
-	    <span class="carousel-control-next-icon"></span>
-	  </a>
-	</div>
-</div>
+
 
 <div class="container">
-	<br><p class="text-center">Tranding Products</p>
+	<br><h1 class="text-center">Search for: {{$search_for}}</h1>
 	<hr>
 	<div class="row">
 		@foreach($products as $item)
