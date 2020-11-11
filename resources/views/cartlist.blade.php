@@ -5,7 +5,7 @@
 <div class="container">
 	<br><h1 class="text-center">Cart List</h1>
     <div class="row">
-    	@if(!$products)
+    	@if($products->count() > 0)
         <div class="col-sm-12 col-md-12 col-md-offset-1">
             <table class="table table-hover">
                 <thead>
@@ -34,9 +34,7 @@
                         <td class="col-sm-1 col-md-1 text-center"><strong>${{$item->price}}</strong></td>
                         <td class="col-sm-1 col-md-1 text-center"><strong>${{$item->price}}</strong></td>
                         <td class="col-sm-1 col-md-1">
-                        <button type="button" class="btn btn-danger">
-                            <span class="glyphicon glyphicon-remove"></span> Remove
-                        </button></td>
+                        <a href="/removecart/{{$item->cart_id}}" class="btn btn-danger">Remove</a></td>
                     </tr>
                     @endforeach
                     <tr>
